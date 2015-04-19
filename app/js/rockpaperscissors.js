@@ -37,36 +37,67 @@ function getComputerMove(move) {
 
 function getWinner(playerMove,computerMove) {
     var winner;
+    var a = 'player';
+    var b = 'comptuer';
+    var c = 'tie';
+    var d = 'no one';
     // Write code that will set winner to either 'player', 'computer', or 'tie' based on the values of playerMove and computerMove.
     // Assume that the only values playerMove and computerMove can have are 'rock', 'paper', and 'scissors'.
     // The rules of the game are that 'rock' beats 'scissors', 'scissors' beats 'paper', and 'paper' beats 'rock'.
-    if (playerMove = computerMove) {
-winner = 'tie';
-}
-else if (playerMove === 'rock') {
-	if (computerMove === 'scissors') {
-		winner = 'player';
+    switch (computerMove) {
+        case 'paper':
+        if (playerMove === 'scissors') {
+		  winner = a;
+          console.log("You Win!")
 		}
-	else {
-		winner = 'computer';
+	else if (playerMove === 'rock') {
+		winner = b;
+        console.log("You Lose!")
 		}
+    else if (playerMove === 'paper') {
+        winner = c;
+        console.log("It's a Tie!")
 	}
-else if (playerMove === 'paper') {
-	if (computerMove === 'rock') {
-		winner = 'player'
+    else {
+        winner = d;
+        console.log("Learn to read fucking directions.")
+    }
+break;
+case 'scissors':
+        if (playerMove === 'rock') {
+		  winner = a;
+          console.log("You Win!")
 		}
-	else {
-		winner = 'computer'
+	else if (playerMove === 'paper') {
+		winner = b;
+        console.log("You Lose!")
 		}
+    else if (playerMove === 'scissors') {
+        winner = c;
+        console.log("It's a Tie!")
 	}
-else if (playerMove === 'scissors') {
-	if (computerMove === 'paper') {
-		winner = 'player'
+    else {
+        winner = d;
+        console.log("Learn to read fucking directions.")
+    }
+break;
+    case 'rock':
+        if (playerMove === 'paper') {
+		  winner = a;
+          console.log("You Win!")
 		}
-	else {
-		winner = 'computer'
+	else if (playerMove === 'scissors') {
+		winner = b;
+        console.log("You Lose!")
 		}
+    else if (playerMove === 'rock') {
+        winner = c;
+        console.log("It's a Tie!")
 	}
+    else {
+        winner = d;
+        console.log("Learn to read fucking directions.")
+    }       
     return winner;
 }
 
