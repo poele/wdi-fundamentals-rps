@@ -38,7 +38,7 @@ function getComputerMove(move) {
 function getWinner(playerMove,computerMove) {
     var winner;
     var a = 'player';
-    var b = 'comptuer';
+    var b = 'computer';
     var c = 'tie';
     var d = 'no one';
     // Write code that will set winner to either 'player', 'computer', or 'tie' based on the values of playerMove and computerMove.
@@ -97,16 +97,30 @@ break;
     else {
         winner = d;
         console.log("Learn to read fucking directions.")
-    }       
-    return winner;
+    }    
+}
+return winner;
 }
 
-function playToFive() {
-    console.log("Let's play Rock, Paper, Scissors");
+function playToFive(playerWins, computerWins) {
+    console.log("Let's play RPS!");
     var playerWins = 0;
     var computerWins = 0;
-    // Write code that plays 'Rock, Paper, Scissors' until either the player or the computer has won five times.
-    /* YOUR CODE HERE */
-    return [playerWins, computerWins];
+    while(computerWins < 5 && playerWins < 5) {
+    var playerMove = getPlayerMove();
+    var computerMove = getComputerMove();
+    var winner = getWinner(playerMove,computerMove);
+    	if (winner === "player") {
+    		playerWins += 1;
+    	}
+    	else if (winner === "computer") {
+    		computerWins += 1;
+    	}
+    	console.log("You chose '" + playerMove + "' while the computer chose '" + computerMove + "'.");
+    	console.log("The score is currently " + playerWins + " to " + computerWins + ".\n");
+    }
 }
 
+//     	return [playerWins, computerWins];
+
+playToFive();
