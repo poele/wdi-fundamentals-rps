@@ -121,6 +121,6 @@ function playToFive(playerWins, computerWins) {
     }
 }
 
-//     	return [playerWins, computerWins];
+//     	return [playerWins, computerWins]; //
 
 playToFive();
